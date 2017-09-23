@@ -9,6 +9,12 @@ cursor = con.cursor()
 # executa comando
 cursor.execute('SELECT * FROM nome_bd.nome_tabela')
 
+try:
+    cursor.execute("INSERT INTO tabela VALUES('valor_string', valor_int)")
+    con.commit()
+except:
+    print("Erro ao gravar registro")
+
 # contagem do numero de linhas da tabela
 numRows = int(cursor.rowcount)
 
